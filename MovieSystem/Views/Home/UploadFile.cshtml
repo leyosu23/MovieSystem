@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Upload file";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<p>Use this area to browse movie and upload to S3 bucket.</p>
+@using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+        <input type="submit" class="btn btn-primary mt-3 mb-4" value="Upload" />
+    </div>
+}    
